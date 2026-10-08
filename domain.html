@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Domain — PureTalk</title>
+<link rel="stylesheet" href="css/globals.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/footer.css" />
+<link rel="stylesheet" href="css/pages.css" />
+<script>
+  (function(){try{var t=localStorage.getItem('puretalk-theme')||'dark';document.documentElement.classList.remove('dark','light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<main>
+<div class="page-wrap">
+  <div class="ambient-glow" style="top:5%;left:-10%;width:500px;height:500px;background:radial-gradient(circle, rgba(59,130,246,0.10) 0%, transparent 70%);"></div>
+  <div class="ambient-glow" style="top:45%;right:-10%;width:400px;height:400px;background:radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%);"></div>
+  <div class="ambient-glow" style="bottom:15%;left:35%;width:350px;height:350px;background:radial-gradient(circle, rgba(52,211,153,0.07) 0%, transparent 70%);"></div>
+
+  <!-- HERO -->
+  <section class="section-relative" style="padding: 80px 0 100px;">
+    <div class="container">
+      <div class="domain-hero-grid">
+        <div class="reveal">
+          <div class="domain-badge">Research Domain</div>
+          <h1 class="section-title" style="font-size: clamp(2.2rem, 4.5vw, 3.8rem); margin-bottom: 22px; line-height: 1.12; letter-spacing: -0.025em;">
+            The Problem PureTalk <span class="text-gradient">Sets Out to Solve</span>
+          </h1>
+          <p style="max-width: 580px; line-height: 1.75; font-size: 17px; color: var(--text-body); margin-bottom: 36px;">
+            Modern online platforms struggle with content moderation that is contextual, fair, and explainable. PureTalk addresses these gaps through an integrated research approach combining AI, NLP, and behavioural science.
+          </p>
+          <div class="domain-stat-chips">
+            <div class="stat-chip"><span class="stat-chip-value">8</span><span class="stat-chip-label">Research Areas</span></div>
+            <div class="stat-chip"><span class="stat-chip-value">6</span><span class="stat-chip-label">Problems</span></div>
+            <div class="stat-chip"><span class="stat-chip-value">4</span><span class="stat-chip-label">Components</span></div>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="150">
+          <div class="hero-image-wrap">
+            <div class="hero-image-glow"></div>
+            <div class="hero-image-card">
+              <img src="images/images1.png" alt="PureTalk research domain illustration" />
+              <div class="hero-image-overlay"></div>
+              <div class="hero-float-chip hero-float-chip-tl"><span style="font-size:14px;">🧠</span><span>AI &amp; NLP</span></div>
+              <div class="hero-float-chip hero-float-chip-br"><span style="font-size:14px;">🛡️</span><span>Safe Communication</span></div>
+            </div>
+            <div class="hero-mini-card">
+              <div class="hero-mini-dot"></div>
+              <div>
+                <div class="hero-mini-title">Integrated System</div>
+                <div class="hero-mini-sub">4 components · 1 platform</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Areas -->
+  <section class="section-relative" style="padding: 100px 0;">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Academic Foundation</p>
+        <h2 class="section-title">Research <span class="text-gradient">Domain Areas</span></h2>
+        <p class="section-subtitle" style="margin-bottom: 56px;">PureTalk sits at the intersection of several cutting-edge research disciplines.</p>
+      </div>
+      <div class="domain-grid" id="domain-grid"></div>
+    </div>
+  </section>
+
+  <!-- Problems -->
+  <section class="section-relative" style="padding: 100px 0; background: var(--bg-section-alt); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Problem Statement</p>
+        <h2 class="section-title">Limitations of <span class="problem-highlight">Conventional Systems</span></h2>
+        <p class="section-subtitle" style="margin-bottom: 56px;">Current content moderation platforms share fundamental shortcomings that PureTalk specifically targets.</p>
+      </div>
+      <div class="problems-grid" id="problems-grid"></div>
+    </div>
+  </section>
+
+  <!-- Gap -->
+  <section class="section-relative" style="padding: 100px 0;">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Research Gap</p>
+        <h2 class="section-title">What is <span class="text-gradient">Missing</span></h2>
+        <p class="section-subtitle" style="margin-bottom: 56px;">Existing research addresses parts of the problem, but no integrated solution combines all necessary components into a cohesive, explainable system.</p>
+      </div>
+      <div class="reveal" data-delay="100">
+        <div class="gap-comparison" id="gap-comparison"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="section-relative" style="padding: 100px 0; background: var(--bg-section-alt); border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Proposed Solution</p>
+        <h2 class="section-title">The PureTalk <span class="text-gradient">Integrated Approach</span></h2>
+        <p class="section-subtitle" style="margin-bottom: 56px;">An end-to-end system that combines four specialised components into a cohesive research platform for safer online communication.</p>
+      </div>
+      <div class="solution-grid" id="solution-grid"></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/theme.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/domain.js"></script>
+</body>
+</html>

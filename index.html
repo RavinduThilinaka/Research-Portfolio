@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PureTalk — Building Safer, Smarter Online Communication</title>
+<meta name="description" content="PureTalk is an intelligent social communication platform combining automated toxicity detection, behavioural analysis, adaptive enforcement, and explainable AI to promote safer online interactions." />
+<link rel="stylesheet" href="css/globals.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/footer.css" />
+<link rel="stylesheet" href="css/pages.css" />
+<script>
+  (function(){try{var t=localStorage.getItem('puretalk-theme')||'dark';document.documentElement.classList.remove('dark','light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<main>
+  <section id="hero-scroll-container" class="hero-scroll-container">
+    <div class="hero-sticky">
+      <div id="hero-img-wrap" class="hero-img-wrap">
+        <img id="hero-scroll-img" class="hero-image" src="frames/frame_000001.png" alt="PureTalk AI Sequence" />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content-wrap">
+        <div id="hero-content" class="hero-content">
+          <h1 class="hero-title">
+            <span class="pure">Pure</span><span class="talk">Talk</span>
+          </h1>
+          <p class="hero-subheading">Building Safer, Smarter, and More Explainable Online Communication</p>
+          <p class="hero-paragraph">PureTalk is an intelligent social communication platform that combines automated toxicity detection, behavioural analysis, adaptive enforcement, and explainable AI to promote safer and more responsible online interactions.</p>
+          <div class="hero-buttons">
+            <a href="components.html" class="btn-primary">
+              Explore the Project
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="domain.html" class="btn-secondary">View Research</a>
+          </div>
+          <div class="hero-stats">
+            <div><div class="hero-stat-value">4+</div><div class="hero-stat-label">Research Components</div></div>
+            <div><div class="hero-stat-value">NLP</div><div class="hero-stat-label">Core Technology</div></div>
+            <div><div class="hero-stat-value">XAI</div><div class="hero-stat-label">Explainable AI</div></div>
+            <div><div class="hero-stat-value">100%</div><div class="hero-stat-label">Team Collaboration</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" style="padding: 72px 0; background: var(--bg-secondary); position: relative;">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 660px; margin: 0 auto 44px;">
+        <span class="eyebrow">Core Capabilities</span>
+        <h2 style="font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; color: var(--text-primary); margin: 14px 0;">
+          What makes PureTalk <span class="text-gradient">different</span>
+        </h2>
+        <p style="font-size: 15.5px; line-height: 1.65; color: var(--text-body);">
+          A multi-component research system designed to address the fundamental limitations of conventional online content moderation.
+        </p>
+      </div>
+      <div class="features-grid" id="features-grid"></div>
+    </div>
+  </section>
+
+  <section style="padding: 72px 0; background: var(--bg-primary); position: relative; overflow: hidden;">
+    <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 70% 55% at 50% 50%, rgba(37,99,235,0.06), transparent);"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="arch-grid">
+        <div class="reveal">
+          <span class="eyebrow">System Architecture</span>
+          <h2 style="font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; color: var(--text-primary); margin: 14px 0;">
+            An integrated <span class="text-gradient">research ecosystem</span>
+          </h2>
+          <p style="font-size: 15.5px; line-height: 1.65; color: var(--text-body); margin-bottom: 24px; max-width: 500px;">
+            PureTalk combines multiple intelligent components into a unified platform that processes messages through a sophisticated pipeline — from initial toxicity detection to explainable enforcement decisions.
+          </p>
+          <div id="arch-tags" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;"></div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="domain.html" class="btn-primary">
+              Explore Architecture
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <button type="button" class="btn-secondary" id="arch-open-btn">
+              View Architecture
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5z M4 15l4-4a3 3 0 014 0l4 4 M14 13l1-1a3 3 0 014 0l1 1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="reveal" data-delay="120">
+          <div class="pipeline-timeline" id="pipeline-timeline"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 72px 0; background: var(--bg-secondary);">
+    <div class="container">
+      <div class="reveal">
+        <div class="cta-panel" style="background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(124,58,237,0.06) 100%); border: 1px solid var(--border-subtle);">
+          <div class="cta-grid-pattern" id="cta-grid-pattern"></div>
+          <div class="cta-blob cta-blob-tr" style="background: radial-gradient(circle, rgba(124,58,237,0.16), transparent 70%);"></div>
+          <div class="cta-blob cta-blob-bl" style="background: radial-gradient(circle, rgba(37,99,235,0.14), transparent 70%);"></div>
+          <div style="position: relative; z-index: 1;">
+            <span class="eyebrow">Meet the Team</span>
+            <h2 style="font-size: clamp(1.5rem, 2.8vw, 2.05rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; color: var(--text-primary); margin: 14px 0;">
+              Built by a <span class="text-gradient">dedicated research team</span>
+            </h2>
+            <p style="font-size: 15.5px; line-height: 1.65; color: var(--text-body); max-width: 580px; margin: 0 auto 28px;">
+              PureTalk is a collaborative university research project. Each team member contributes a specialised component to the overall PureTalk ecosystem.
+            </p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <a href="about.html" class="btn-primary">Meet the Team</a>
+              <a href="components.html" class="btn-secondary">View Components</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<div id="arch-modal-root"></div>
+
+<script src="js/theme.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/hero-scroll.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

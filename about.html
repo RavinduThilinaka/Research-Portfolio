@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us — PureTalk</title>
+<link rel="stylesheet" href="css/globals.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/footer.css" />
+<link rel="stylesheet" href="css/pages.css" />
+<style>
+  .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .team-card {
+    padding: 32px; background: var(--bg-card-subtle);
+    border: 1px solid var(--border-subtle); border-radius: 20px;
+    height: 100%; display: flex; flex-direction: column; gap: 20px;
+    cursor: pointer; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+  .team-card:hover {
+    background: var(--bg-card-hover); transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--member-color) 60%, transparent);
+    box-shadow: 0 20px 60px color-mix(in srgb, var(--member-color) 20%, transparent);
+  }
+  .team-avatar {
+    width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
+    flex-shrink: 0; position: relative;
+    background: linear-gradient(135deg, var(--member-color), color-mix(in srgb, var(--member-color) 60%, transparent));
+    display: flex; align-items: center; justify-content: center;
+  }
+  .team-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .social-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--bg-input); border: 1px solid var(--border-input);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-tag); text-decoration: none; transition: all 0.2s ease;
+  }
+  .social-icon:hover { color: var(--text-primary); }
+  .tech-tag {
+    padding: 4px 11px; background: var(--bg-input);
+    border: 1px solid var(--border-input); border-radius: 6px;
+    font-size: 12px; color: var(--text-tag); font-weight: 500;
+  }
+  .info-panel {
+    padding: 32px; background: var(--bg-card-subtle);
+    border: 1px solid var(--border-subtle); border-radius: 18px;
+  }
+  .about-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .info-row { display: flex; justify-content: space-between; padding: 12px 0; gap: 16px; border-bottom: 1px solid var(--border-subtle); }
+  .info-row:last-child { border-bottom: none; }
+  .member-modal-backdrop {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; animation: fadeIn 0.25s ease;
+  }
+  .member-modal {
+    position: relative; max-width: 440px; width: 100%;
+    max-height: 90vh; overflow-y: auto; border-radius: 24px;
+    background: var(--bg-card, #111827);
+    border: 1px solid color-mix(in srgb, var(--member-color) 30%, transparent);
+    box-shadow: 0 30px 90px color-mix(in srgb, var(--member-color) 30%, transparent);
+    animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @media (max-width: 760px) {
+    .team-grid { grid-template-columns: 1fr !important; }
+    .about-info-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+<script>
+  (function(){try{var t=localStorage.getItem('puretalk-theme')||'dark';document.documentElement.classList.remove('dark','light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<main>
+<div class="page-wrap">
+  <div class="ambient-glow" style="top:8%;left:-10%;width:500px;height:500px;background:radial-gradient(circle, rgba(59,130,246,0.10) 0%, transparent 70%);"></div>
+  <div class="ambient-glow" style="top:35%;right:-10%;width:400px;height:400px;background:radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%);"></div>
+  <div class="ambient-glow" style="bottom:15%;left:35%;width:350px;height:350px;background:radial-gradient(circle, rgba(52,211,153,0.07) 0%, transparent 70%);"></div>
+
+  <section class="section-relative" style="padding: 80px 0 60px;">
+    <div class="container">
+      <div class="reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:32px;height:2px;background:linear-gradient(90deg,#3B82F6,#A78BFA);border-radius:2px;"></div>
+          <p style="margin:0;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(90deg,#60A5FA,#C4B5FD);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">The Team</p>
+        </div>
+        <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);margin-bottom:20px;line-height:1.15;">
+          Meet the <span class="text-gradient">PureTalk Team</span>
+        </h1>
+        <p style="max-width:640px;line-height:1.75;font-size:17px;color:var(--text-body);">
+          PureTalk is a collaborative university research project. Each team member leads a specialised research component contributing to the complete PureTalk ecosystem.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-relative" style="padding: 0 0 80px;">
+    <div class="container">
+      <div class="team-grid" id="team-grid"></div>
+    </div>
+  </section>
+
+  <section class="section-relative" style="padding: 60px 0 100px; border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="reveal">
+        <div class="about-info-grid">
+          <div class="info-panel">
+            <h3 style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#22D3EE;margin-bottom:24px;display:flex;align-items:center;gap:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#22D3EE;display:inline-block;"></span>
+              Project Information
+            </h3>
+            <div class="info-row"><span style="font-size:13px;color:var(--text-secondary);">Project Name</span><span style="font-size:13px;color:var(--text-primary);font-weight:500;">PureTalk</span></div>
+            <div class="info-row"><span style="font-size:13px;color:var(--text-secondary);">Type</span><span style="font-size:13px;color:var(--text-primary);font-weight:500;">University Research Project</span></div>
+            <div class="info-row"><span style="font-size:13px;color:var(--text-secondary);">Department</span><span style="font-size:13px;color:var(--text-primary);font-weight:500;">IT</span></div>
+            <div class="info-row"><span style="font-size:13px;color:var(--text-secondary);">University</span><span style="font-size:13px;color:var(--text-primary);font-weight:500;">SLIIT</span></div>
+            <div class="info-row"><span style="font-size:13px;color:var(--text-secondary);">Academic Year</span><span style="font-size:13px;color:var(--text-primary);font-weight:500;">2026</span></div>
+            <div class="info-row"><span style="font-size:13px;color:var(--text-secondary);">Supervisor</span><span style="font-size:13px;color:var(--text-primary);font-weight:500;">Manori Gamage</span></div>
+          </div>
+
+          <div class="info-panel">
+            <h3 style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#A78BFA;margin-bottom:24px;display:flex;align-items:center;gap:8px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#A78BFA;display:inline-block;"></span>
+              Research Summary
+            </h3>
+            <p style="font-size:14px;color:var(--text-body);line-height:1.75;margin-bottom:20px;">
+              PureTalk is a collaborative university research project that investigates the integration of <strong>toxicity detection</strong>, <strong>image detection</strong>, <strong>adaptive emotional shielding</strong>, <strong>profile-based toxic behaviour enforcement</strong>, and <strong>explainable AI (XAI)</strong> into a unified online communication platform.
+            </p>
+            <p style="font-size:14px;color:var(--text-body);line-height:1.75;margin-bottom:24px;">
+              The project addresses fundamental limitations in current content moderation systems, proposing a context-aware, personalised, and transparent approach to promoting safer online interactions.
+            </p>
+            <a href="domain.html" class="btn-secondary" style="display:inline-flex;">
+              View Research Domain
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+<div id="member-modal-root"></div>
+
+<script src="js/theme.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/about.js"></script>
+</body>
+</html>

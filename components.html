@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Components — PureTalk</title>
+<link rel="stylesheet" href="css/globals.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/footer.css" />
+<link rel="stylesheet" href="css/pages.css" />
+<script>
+  (function(){try{var t=localStorage.getItem('puretalk-theme')||'dark';document.documentElement.classList.remove('dark','light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<main>
+<div class="page-wrap">
+  <div class="ambient-glow" style="top:10%;left:-10%;width:600px;height:600px;background:radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);filter:blur(80px);"></div>
+  <div class="ambient-glow" style="top:40%;right:-10%;width:500px;height:500px;background:radial-gradient(circle, rgba(167,139,250,0.10) 0%, transparent 70%);filter:blur(80px);"></div>
+  <div class="ambient-glow" style="bottom:10%;left:30%;width:450px;height:450px;background:radial-gradient(circle, rgba(52,211,153,0.08) 0%, transparent 70%);filter:blur(80px);"></div>
+
+  <section class="section-relative" style="padding: 80px 0 60px;">
+    <div class="container">
+      <div class="reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:40px;height:2px;background:linear-gradient(90deg,#3B82F6,#A78BFA,#34D399);border-radius:2px;"></div>
+          <p style="margin:0;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(90deg,#60A5FA,#C4B5FD,#6EE7B7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Research Components</p>
+        </div>
+        <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);margin-bottom:20px;line-height:1.15;">
+          The PureTalk <span class="text-gradient">Component Ecosystem</span>
+        </h1>
+        <p style="max-width:700px;line-height:1.75;font-size:17px;color:var(--text-body);">
+          PureTalk is a collaborative team research project. Each component below represents a distinct research contribution, together forming the complete PureTalk intelligent moderation platform.
+        </p>
+      </div>
+
+      <div class="reveal" data-delay="200">
+        <div class="ecosystem-overview" id="ecosystem-overview">
+          <div style="position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg, transparent, rgba(59,130,246,0.6), rgba(167,139,250,0.6), rgba(52,211,153,0.6), transparent);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-relative" style="padding: 0 0 100px;">
+    <div class="container">
+      <div class="components-grid" id="components-grid"></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+<div id="component-modal-root"></div>
+
+<script src="js/theme.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/components.js"></script>
+</body>
+</html>

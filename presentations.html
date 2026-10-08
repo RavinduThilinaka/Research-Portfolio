@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Presentations — PureTalk</title>
+<link rel="stylesheet" href="css/globals.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/footer.css" />
+<link rel="stylesheet" href="css/pages.css" />
+<script>
+  (function(){try{var t=localStorage.getItem('puretalk-theme')||'dark';document.documentElement.classList.remove('dark','light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<main>
+<div class="page-wrap">
+  <div class="ambient-glow" style="top:8%;left:-10%;width:600px;height:600px;background:radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%);filter:blur(80px);"></div>
+  <div class="ambient-glow" style="top:35%;right:-10%;width:500px;height:500px;background:radial-gradient(circle, rgba(124,58,237,0.10) 0%, transparent 70%);filter:blur(80px);"></div>
+  <div class="ambient-glow" style="bottom:15%;left:35%;width:450px;height:450px;background:radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%);filter:blur(80px);"></div>
+
+  <section class="section-relative" style="padding: 80px 0 40px;">
+    <div class="container">
+      <div class="reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:40px;height:2px;background:linear-gradient(90deg,#2563EB,#7C3AED,#10B981);border-radius:2px;"></div>
+          <p style="margin:0;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(90deg,#60A5FA,#C4B5FD,#6EE7B7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Academic Presentations</p>
+        </div>
+        <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);margin-bottom:20px;line-height:1.15;">
+          Project <span class="text-gradient">Presentations</span>
+        </h1>
+        <p style="max-width:680px;line-height:1.75;font-size:17px;color:var(--text-body);">
+          PureTalk presentations delivered throughout the research lifecycle — from initial proposal to final demonstration of the complete system.
+        </p>
+      </div>
+      <div class="reveal" data-delay="200">
+        <div class="stats-grid" id="pres-stats"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-relative" style="padding: 40px 0 100px;">
+    <div class="container">
+      <div class="reveal" data-delay="100">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <h2 style="font-size:20px;font-weight:700;color:var(--text-primary);margin:0;">All Presentations</h2>
+            <span style="padding:3px 10px;background:var(--bg-input);border:1px solid var(--border-input);border-radius:100px;font-size:11px;font-weight:600;color:var(--text-tag);">4 items</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-secondary);">
+            <span style="width:6px;height:6px;border-radius:50%;background:#00D6FF;display:inline-block;box-shadow:0 0 8px #00D6FF;"></span>
+            All presentations currently in progress
+          </div>
+        </div>
+      </div>
+      <div class="pres-grid" id="pres-grid"></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+<div id="pres-modal-root"></div>
+
+<script src="js/theme.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/presentations.js"></script>
+</body>
+</html>

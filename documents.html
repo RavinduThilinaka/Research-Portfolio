@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Documents — PureTalk</title>
+<link rel="stylesheet" href="css/globals.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/footer.css" />
+<link rel="stylesheet" href="css/pages.css" />
+<script>
+  (function(){try{var t=localStorage.getItem('puretalk-theme')||'dark';document.documentElement.classList.remove('dark','light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();
+</script>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<main>
+<div class="page-wrap">
+  <div class="ambient-glow" style="top:8%;left:-10%;width:600px;height:600px;background:radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);filter:blur(80px);"></div>
+  <div class="ambient-glow" style="top:35%;right:-10%;width:500px;height:500px;background:radial-gradient(circle, rgba(167,139,250,0.10) 0%, transparent 70%);filter:blur(80px);"></div>
+  <div class="ambient-glow" style="bottom:15%;left:35%;width:450px;height:450px;background:radial-gradient(circle, rgba(52,211,153,0.08) 0%, transparent 70%);filter:blur(80px);"></div>
+
+  <section class="section-relative" style="padding: 80px 0 40px;">
+    <div class="container">
+      <div class="reveal">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:40px;height:2px;background:linear-gradient(90deg,#3B82F6,#A78BFA,#34D399);border-radius:2px;"></div>
+          <p style="margin:0;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;background:linear-gradient(90deg,#60A5FA,#C4B5FD,#6EE7B7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Academic Library</p>
+        </div>
+        <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);margin-bottom:20px;line-height:1.15;">
+          Project <span class="text-gradient">Documents</span>
+        </h1>
+        <p style="max-width:680px;line-height:1.75;font-size:17px;color:var(--text-body);">
+          A curated library of academic and technical documents produced throughout the PureTalk research project. Documents will be made available as they are completed.
+        </p>
+      </div>
+      <div class="reveal" data-delay="200">
+        <div class="stats-grid" id="docs-stats"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-relative" style="padding: 40px 0 100px;">
+    <div class="container">
+      <div class="reveal" data-delay="100">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <h2 style="font-size:20px;font-weight:700;color:var(--text-primary);margin:0;">All Documents</h2>
+            <span style="padding:3px 10px;background:var(--bg-input);border:1px solid var(--border-input);border-radius:100px;font-size:11px;font-weight:600;color:var(--text-tag);">6 items</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-secondary);">
+            <span style="width:6px;height:6px;border-radius:50%;background:#FBBF24;display:inline-block;box-shadow:0 0 8px #FBBF24;"></span>
+            All documents currently in progress
+          </div>
+        </div>
+      </div>
+      <div class="docs-grid" id="docs-grid"></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/theme.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/scroll-reveal.js"></script>
+<script src="js/documents.js"></script>
+</body>
+</html>
