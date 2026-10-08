@@ -9,6 +9,8 @@
       member: 'Tharindi W A K',
       contribution: 'Designed and implemented the core NLP pipeline for automated toxicity classification using transformer-based models.',
       github: null },
+
+
     { id: 'image-detection', number: '02', title: 'Image Detection & Visual Content Analysis', shortTitle: 'Image Detection',
       icon: '🖼️', color: '#22D3EE', gradient: 'linear-gradient(135deg, #22D3EE, #3B82F6)',
       image: 'images/images4.jpg',
@@ -18,6 +20,8 @@
       member: 'Perera M D S',
       contribution: 'Developed the visual content analysis pipeline for detecting harmful imagery using deep learning models.',
       github: null },
+
+
     { id: 'enforcement', number: '03', title: 'Profile-Based Enforcement & Explainable AI', shortTitle: 'Adaptive Enforcement & XAI',
       icon: '⚖️', color: '#A78BFA', gradient: 'linear-gradient(135deg, #A78BFA, #EC4899)',
       image: 'images/images3.jpg',
@@ -27,6 +31,8 @@
       member: 'Manohara H U K R T',
       contribution: 'Designed and implemented the complete Profile-Based Toxic Behaviour Enforcement and Explainable AI module. This includes the adaptive enforcement engine that personalises moderation based on user risk profiles, a Random Forest classifier for multi-tier risk categorisation, SHAP-based explanations that make every decision interpretable, and Social Network Analysis for detecting toxic interaction patterns and clusters. The module transforms basic toxicity detection into a personalised, behaviour-aware, and fully explainable enforcement system.',
       github: null, highlight: true },
+
+      
     { id: 'emotional-shielding', number: '04', title: 'Adaptive Emotional Shielding', shortTitle: 'Emotional Shielding',
       icon: '🛡️', color: '#34D399', gradient: 'linear-gradient(135deg, #34D399, #06B6D4)',
       image: 'images/images2.jpg',

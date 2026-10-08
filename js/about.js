@@ -6,12 +6,16 @@
       technologies: ['Python', 'BERT', 'PyTorch', 'FastAPI', 'Transformers'],
       color: '#3B82F6', initials: 'TM', image: 'images/member1.png',
       github: '#', linkedin: '#' },
+      
+      
     { id: 'member2', name: 'Perera M D S', role: 'Image Detection Researcher',
       component: 'Image Detection & Visual Content Analysis',
       contribution: 'Developed the image detection module that identifies harmful visual content using deep learning and computer vision techniques, ensuring multimedia content moderation across the platform.',
       technologies: ['Python', 'OpenCV', 'TensorFlow', 'CNN', 'PyTorch'],
       color: '#22D3EE', initials: 'TM', image: 'images/member2.jpeg',
       github: 'https://github.com/senu02', linkedin: 'https://www.linkedin.com/in/senura-perera-21b26b33a' },
+
+
     { id: 'member3', name: 'Manohara H U K R T', role: 'Enforcement & XAI Researcher',
       component: 'Profile-Based Enforcement & Explainable AI',
       contribution: 'Designed and implemented the adaptive enforcement engine and the explainable AI module, ensuring every moderation decision is transparent and contextually appropriate.',
@@ -19,6 +23,8 @@
       color: '#A78BFA', initials: 'YN', image: 'images/member3.png',
       github: 'https://github.com/RavinduThilinaka', linkedin: 'https://www.linkedin.com/in/ravindu-thilinaka',
       highlight: true },
+
+
     { id: 'member4', name: 'Praveen H G', role: 'Adaptive Emotional Shielding Researcher',
       component: 'Adaptive Emotional Shielding',
       contribution: 'Built the adaptive emotional shielding system that dynamically protects users from emotionally harmful interactions based on their profile and real-time sentiment analysis.',

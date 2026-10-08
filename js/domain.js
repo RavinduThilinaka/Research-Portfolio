@@ -1,90 +1,120 @@
 (function () {
-  const MILESTONES = [
-    { phase: 'Phase 01', title: 'Project Proposal', desc: 'Initial proposal defining the research scope, objectives, methodology, and expected contributions of the PureTalk project.', status: 'Completed', date: '[Project Date]', doc: 'Project Proposal Document', color: '#34D399' },
-    { phase: 'Phase 02', title: 'Literature Review', desc: 'Comprehensive review of existing research in toxicity detection, content moderation, behavioural analysis, and explainable AI.', status: 'Completed', date: '[Project Date]', doc: 'Literature Review Report', color: '#34D399' },
-    { phase: 'Phase 03', title: 'Requirement Analysis', desc: 'Identification and documentation of functional and non-functional system requirements for all PureTalk components.', status: 'Completed', date: '[Project Date]', doc: 'Requirements Specification', color: '#34D399' },
-    { phase: 'Phase 04', title: 'System Design', desc: 'Architecture design, component diagrams, data flow models, and interface design for the integrated PureTalk platform.', status: 'Completed', date: '[Project Date]', doc: 'System Design Document', color: '#34D399' },
-    { phase: 'Phase 05', title: 'Component Development', desc: 'Individual development of each research component by designated team members: toxicity detection, behaviour analysis, adaptive enforcement, and XAI.', status: 'In Progress', date: '[Project Date]', doc: null, color: '#3B82F6' },
-    { phase: 'Phase 06', title: 'Integration', desc: 'Integration of all individual components into a unified PureTalk platform with shared API interfaces and data pipelines.', status: 'In Progress', date: '[Project Date]', doc: null, color: '#3B82F6' },
-    { phase: 'Phase 07', title: 'Testing', desc: 'Unit testing, integration testing, and system testing of all components to ensure correctness, performance, and reliability.', status: 'Pending', date: '[Project Date]', doc: null, color: '#94A3B8' },
-    { phase: 'Phase 08', title: 'Evaluation', desc: 'Performance evaluation using accuracy, precision, recall, F1-score, and comparison against baseline systems.', status: 'Pending', date: '[Project Date]', doc: null, color: '#94A3B8' },
-    { phase: 'Phase 09', title: 'Documentation', desc: 'Final technical documentation including the dissertation, research paper, poster, and supplementary materials.', status: 'Pending', date: '[Project Date]', doc: null, color: '#94A3B8' },
-    { phase: 'Phase 10', title: 'Final Presentation', desc: 'Final presentation of the PureTalk research project to academic supervisors, examiners, and stakeholders.', status: 'Pending', date: '[Project Date]', doc: null, color: '#94A3B8' },
+  const RESEARCH_AREAS = [
+    { icon: '🤖', title: 'Artificial Intelligence', desc: 'Machine learning models for automated content analysis and decision-making.' },
+    { icon: '💬', title: 'Natural Language Processing', desc: 'Text understanding, sentiment analysis, and multilingual content processing.' },
+    { icon: '🌐', title: 'Social Media Analysis', desc: 'Study of online communication patterns and community dynamics.' },
+    { icon: '🛡️', title: 'Content Moderation', desc: 'Automated and semi-automated systems for platform safety management.' },
+    { icon: '☣️', title: 'Toxicity Detection', desc: 'Classification of harmful, abusive, or offensive online content.' },
+    { icon: '📈', title: 'Behavioural Analysis', desc: 'Modelling user behaviour patterns over time using historical data.' },
+    { icon: '💡', title: 'Explainable AI (XAI)', desc: 'Techniques that make AI decisions transparent and interpretable to humans.' },
+    { icon: '🔒', title: 'Online Safety', desc: 'Frameworks for protecting users from harm in digital communication spaces.' },
   ];
 
-  const STATUS_COLORS = {
-    'Completed': { bg: 'rgba(52,211,153,0.18)', text: '#34D399', border: 'rgba(52,211,153,0.45)' },
-    'In Progress': { bg: 'rgba(59,130,246,0.18)', text: '#60A5FA', border: 'rgba(59,130,246,0.45)' },
-    'Pending': { bg: 'rgba(148,163,184,0.15)', text: '#CBD5E1', border: 'rgba(148,163,184,0.35)' },
-  };
+  const PROBLEMS = [
+    { icon: '📩', title: 'Message-Level Moderation', desc: 'Existing systems often evaluate messages in isolation without considering the broader context of a conversation or a user\'s communication history.', severity: 'high' },
+    { icon: '📏', title: 'Uniform Toxicity Thresholds', desc: 'Most platforms apply the same toxicity thresholds to all users regardless of their offence history or risk profile, leading to inconsistent enforcement.', severity: 'high' },
+    { icon: '🧩', title: 'Lack of Behavioural Context', desc: 'Conventional systems do not account for user behaviour patterns, repeat offenders, or contextual escalation over time.', severity: 'medium' },
+    { icon: '🌍', title: 'Limited Multilingual Support', desc: 'Many moderation models are trained primarily on English data, reducing effectiveness on multilingual or code-mixed communication.', severity: 'medium' },
+    { icon: '❓', title: 'Unexplained Decisions', desc: 'Users and moderators receive little to no explanation of why content was flagged or what enforcement action was applied.', severity: 'high' },
+    { icon: '👤', title: 'No Personalisation', desc: 'Enforcement actions are generic and do not adapt based on individual user profiles, leading to either under-enforcement or over-enforcement.', severity: 'medium' },
+  ];
 
-  function renderProgress() {
-    const wrap = document.getElementById('progress-indicators');
-    if (!wrap) return;
-    wrap.innerHTML = Object.entries(STATUS_COLORS).map(([status, colors]) => {
-      const count = MILESTONES.filter(m => m.status === status).length;
-      return `
-        <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:10px;height:10px;border-radius:50%;background:${colors.text};box-shadow:0 0 12px ${colors.text}60;"></div>
-          <span style="font-size:13px;color:var(--text-tag);font-weight:600;">
-            ${status} <span style="color:${colors.text};font-weight:700;">(${count})</span>
-          </span>
+  const GAP_EXISTING = [
+    'Message-level only', 'No user history', 'Fixed thresholds',
+    'No explanations', 'Generic enforcement', 'English-centric',
+  ];
+  const GAP_PURETALK = [
+    'Contextual analysis', 'User profile & history', 'Adaptive thresholds',
+    'Explainable decisions', 'Personalised enforcement', 'Multilingual support',
+  ];
+
+  const SOLUTIONS = [
+    { step: '01', title: 'Toxicity Detection', desc: 'Advanced NLP models identify harmful content across multiple languages and communication styles.', color: '#3B82F6' },
+    { step: '02', title: 'Image Detection', desc: 'Computer vision systems analyse visual content to detect harmful, explicit, or policy-violating imagery.', color: '#22D3EE' },
+    { step: '03', title: 'Adaptive Enforcement', desc: 'Enforcement actions are dynamically calibrated based on toxicity level and user risk classification.', color: '#A78BFA' },
+    { step: '04', title: 'Emotional Shielding', desc: 'Adaptive emotional protection shields users from psychologically harmful content in real time.', color: '#34D399' },
+  ];
+
+  function renderAreas() {
+    const grid = document.getElementById('domain-grid');
+    if (!grid) return;
+    grid.innerHTML = RESEARCH_AREAS.map((a, i) => `
+      <div class="reveal" data-delay="${i * 80}">
+        <div class="domain-card">
+          <div class="domain-card-icon">${a.icon}</div>
+          <h3>${a.title}</h3>
+          <p>${a.desc}</p>
         </div>
-      `;
-    }).join('');
+      </div>
+    `).join('');
   }
 
-  function renderTimeline() {
-    const wrap = document.getElementById('timeline-list');
+  function renderProblems() {
+    const grid = document.getElementById('problems-grid');
+    if (!grid) return;
+    grid.innerHTML = PROBLEMS.map((p, i) => `
+      <div class="reveal" data-delay="${i * 80}">
+        <div class="problem-card problem-${p.severity}">
+          <div class="problem-icon">${p.icon}</div>
+          <div class="problem-title-row">
+            <h3>${p.title}</h3>
+            <span class="severity-badge severity-${p.severity}">${p.severity}</span>
+          </div>
+          <p>${p.desc}</p>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderGap() {
+    const wrap = document.getElementById('gap-comparison');
     if (!wrap) return;
 
-    wrap.innerHTML = MILESTONES.map((m, i) => {
-      const isLeft = i % 2 === 0;
-      const sc = STATUS_COLORS[m.status];
-      const isPending = m.status === 'Pending';
+    const renderSide = (items, isExisting) => items.map((item, idx) => `
+      <div class="gap-row" style="${idx < items.length - 1 ? '' : 'border-bottom:none;'}">
+        <span style="color:${isExisting ? '#F87171' : '#34D399'};font-size:16px;font-weight:700;">${isExisting ? '✗' : '✓'}</span>
+        <span style="font-size:14px;color:${isExisting ? 'var(--text-tag)' : 'var(--text-primary)'};${isExisting ? '' : 'font-weight:500;'}">${item}</span>
+      </div>
+    `).join('');
 
-      const badgeBg = isPending ? 'rgba(148,163,184,0.18)' : sc.bg;
-      const badgeText = isPending ? '#64748B' : sc.text;
-      const badgeBorder = isPending ? 'rgba(100,116,139,0.35)' : sc.border;
+    wrap.innerHTML = `
+      <div>
+        <h3 class="gap-title gap-title-existing">
+          <span style="width:8px;height:8px;border-radius:50%;background:#F87171;display:inline-block;box-shadow:0 0 12px rgba(248,113,113,0.6);"></span>
+          Existing Systems
+        </h3>
+        ${renderSide(GAP_EXISTING, true)}
+      </div>
+      <div style="text-align:center;"><div class="gap-vs">VS</div></div>
+      <div>
+        <h3 class="gap-title gap-title-puretalk">
+          <span style="width:8px;height:8px;border-radius:50%;background:#22D3EE;display:inline-block;box-shadow:0 0 12px rgba(34,211,238,0.6);"></span>
+          PureTalk Approach
+        </h3>
+        ${renderSide(GAP_PURETALK, false)}
+      </div>
+    `;
+  }
 
-      const card = `
-        <div class="timeline-card" style="border-color:${m.color}40;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
-            <span style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${m.color};">${m.phase}</span>
-            <span style="padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;background:${badgeBg};color:${badgeText};border:1px solid ${badgeBorder};letter-spacing:0.3px;">${m.status}</span>
-          </div>
-          <h3 style="font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:10px;line-height:1.35;">${m.title}</h3>
-          <p style="font-size:13px;color:var(--text-body);line-height:1.7;margin-bottom:14px;">${m.desc}</p>
-          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-            <span class="date-chip">📅 ${m.date}</span>
-            ${m.doc ? `<span class="doc-chip">📄 ${m.doc}</span>` : ''}
-          </div>
+  function renderSolutions() {
+    const grid = document.getElementById('solution-grid');
+    if (!grid) return;
+    grid.innerHTML = SOLUTIONS.map((c, i) => `
+      <div class="reveal" data-delay="${i * 100}">
+        <div class="solution-card" style="--comp-color:${c.color};background:linear-gradient(145deg, ${c.color}22, ${c.color}08);border:1px solid ${c.color}55;">
+          <div class="solution-step" style="color:${c.color};">${c.step}</div>
+          <h3>${c.title}</h3>
+          <p>${c.desc}</p>
         </div>
-      `;
-
-      return `
-        <div class="reveal" data-delay="${i * 60}">
-          <div class="timeline-row">
-            <div class="timeline-col-left" style="text-align:right;padding-right:32px;">
-              ${isLeft ? card : ''}
-            </div>
-            <div class="timeline-col-center" style="display:flex;justify-content:center;">
-              <div class="timeline-dot-big" style="background:${m.color}25;border:2px solid ${m.color};color:${m.color};--dot-color:${m.color}40;box-shadow:0 0 0 6px var(--bg-primary), 0 0 20px ${m.color}40;">
-                ${String(i + 1).padStart(2, '0')}
-              </div>
-            </div>
-            <div class="timeline-col-right" style="padding-left:32px;">
-              ${!isLeft ? card : ''}
-            </div>
-          </div>
-        </div>
-      `;
-    }).join('');
+      </div>
+    `).join('');
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    renderProgress();
-    renderTimeline();
+    renderAreas();
+    renderProblems();
+    renderGap();
+    renderSolutions();
     document.dispatchEvent(new Event('reveal:refresh'));
   });
 })();
