@@ -402,10 +402,10 @@ export default function AboutPage() {
                 {[
                   { label: "Project Name", value: "PureTalk" },
                   { label: "Type", value: "University Research Project" },
-                  { label: "Department", value: "[Department Name]" },
-                  { label: "University", value: "[University Name]" },
-                  { label: "Academic Year", value: "[Academic Year]" },
-                  { label: "Supervisor", value: "[Supervisor Name]" },
+                  { label: "Department", value: "IT" },
+                  { label: "University", value: "SLIIT" },
+                  { label: "Academic Year", value: "2026" },
+                  { label: "Supervisor", value: "Manori Gamage" },
                 ].map((item, idx, arr) => (
                   <div
                     key={item.label}

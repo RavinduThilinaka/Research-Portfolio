@@ -619,6 +619,7 @@ export default function HomePage() {
           border-radius: 14px;
           height: 100%;
           overflow: hidden;
+          cursor: pointer;
           transition: transform 0.28s ease, box-shadow 0.28s ease,
                       border-color 0.28s ease, background 0.28s ease;
         }
@@ -698,6 +699,7 @@ export default function HomePage() {
           display: flex;
           gap: 18px;
           position: relative;
+          cursor: pointer;
         }
 
         .timeline-item:not(:last-child) {
