@@ -1,9 +1,61 @@
 (function () {
   const PRESENTATIONS = [
-    { id: 'proposal', number: '01', title: 'Proposal Presentation', desc: 'Initial project presentation covering the research problem, proposed approach, objectives, methodology, and expected outcomes of the PureTalk project.', type: 'Proposal', date: '2024', slides: '24 Slides', color: '#2563EB', icon: '📋', image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=600&fit=crop&q=80', available: false },
-    { id: 'progress', number: '02', title: 'Progress Presentation', desc: 'Mid-project progress presentation showcasing completed milestones, preliminary results, current system status, and upcoming development phases.', type: 'Progress', date: '2024', slides: '32 Slides', color: '#00D6FF', icon: '📊', image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1000&h=600&fit=crop&q=80', available: false },
-    { id: 'research', number: '03', title: 'Research Presentation', desc: 'Focused research presentation covering literature findings, research gap analysis, methodology, and the theoretical foundation of the PureTalk approach.', type: 'Research', date: '2024', slides: '28 Slides', color: '#7C3AED', icon: '🔬', image: 'https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=1000&h=600&fit=crop&q=80', available: false },
-    { id: 'final', number: '04', title: 'Final Presentation', desc: 'Comprehensive final project presentation demonstrating the complete PureTalk platform, evaluation results, team contributions, and research conclusions.', type: 'Final', date: '2024', slides: '40 Slides', color: '#10B981', icon: '🎓', image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1000&h=600&fit=crop&q=80', available: false },
+    { 
+      id: 'proposal', 
+      number: '01', 
+      title: 'Proposal Presentation', 
+      desc: 'Initial project presentation covering the research problem, proposed approach, objectives, methodology, and expected outcomes of the PureTalk project.', 
+      type: 'Proposal', 
+      date: '2024', 
+      slides: '24 Slides', 
+      color: '#2563EB', 
+      icon: '📋', 
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&h=600&fit=crop&q=80', 
+      available: false,
+      driveLink: 'https://drive.google.com/drive/folders/1OQzW_cc-YaZtbKLXB8WnBc0sdDxk5joW?usp=sharing' 
+    },
+    { 
+      id: 'progress', 
+      number: '02', 
+      title: 'Progress Presentation 1', 
+      desc: 'Mid-project progress presentation showcasing completed milestones, preliminary results, current system status, and upcoming development phases.', 
+      type: 'Progress', 
+      date: '2024', 
+      slides: '32 Slides', 
+      color: '#00D6FF', 
+      icon: '📊', 
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1000&h=600&fit=crop&q=80', 
+      available: false,
+      driveLink: 'https://drive.google.com/drive/folders/16egroJKpZtvuPuTC_6nLnJd3tytVNMkl?usp=sharing'
+    },
+    { 
+      id: 'research', 
+      number: '03', 
+      title: 'Progress Presentation 2', 
+      desc: 'Focused research presentation covering literature findings, research gap analysis, methodology, and the theoretical foundation of the PureTalk approach.', 
+      type: 'Research', 
+      date: '2024', 
+      slides: '28 Slides', 
+      color: '#7C3AED', 
+      icon: '🔬', 
+      image: 'https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=1000&h=600&fit=crop&q=80', 
+      available: false,
+      driveLink: 'https://drive.google.com/drive/folders/1IAbewRO7QaFHrtFRmA4rzqksG_a9F1Zq?usp=sharing' 
+    },
+    { 
+      id: 'final', 
+      number: '04', 
+      title: 'Final Presentation', 
+      desc: 'Comprehensive final project presentation demonstrating the complete PureTalk platform, evaluation results, team contributions, and research conclusions.', 
+      type: 'Final', 
+      date: '2024', 
+      slides: '40 Slides', 
+      color: '#10B981', 
+      icon: '🎓', 
+      image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1000&h=600&fit=crop&q=80', 
+      available: false,
+      driveLink: '' 
+    },
   ];
 
   const STATS = [
@@ -65,13 +117,14 @@
             </div>
             <div style="display:flex;gap:8px;margin-top:16px;">
               <button class="pres-btn pres-btn-view" style="--btn-color:${p.color};" data-view="${p.id}">${EYE_SVG}${p.available ? 'View' : 'Preview'}</button>
-              <button class="pres-btn pres-btn-download" style="--btn-color:${p.color};" ${p.available ? '' : 'disabled'}>${DL_SVG}Download</button>
+              <button class="pres-btn pres-btn-download" style="--btn-color:${p.color};" data-download="${p.driveLink || ''}" ${p.driveLink ? '' : 'disabled'}>${DL_SVG}Download</button>
             </div>
           </div>
         </div>
       </div>
     `).join('');
 
+    // View button click
     grid.querySelectorAll('[data-view]').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -80,6 +133,18 @@
       });
     });
 
+    // Download button click → Drive link open
+    grid.querySelectorAll('[data-download]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const link = btn.dataset.download;
+        if (link) {
+          window.open(link, '_blank', 'noopener,noreferrer');
+        }
+      });
+    });
+
+    // Card click → modal
     grid.querySelectorAll('.pres-card').forEach(card => {
       card.addEventListener('click', () => {
         const p = PRESENTATIONS.find(x => x.id === card.dataset.presId);
@@ -123,6 +188,11 @@
           </div>
 
           <div style="flex-shrink:0;padding:14px 22px;border-top:1px solid var(--border-subtle);background:var(--bg-tertiary);display:flex;justify-content:flex-end;gap:10px;">
+            ${pres.driveLink ? `
+              <a href="${pres.driveLink}" target="_blank" rel="noopener noreferrer" style="padding:8px 18px;background:${pres.color};border:none;border-radius:10px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+                ${DL_SVG} Download
+              </a>
+            ` : ''}
             <button id="pres-close-footer" style="padding:8px 18px;background:#334155;border:none;border-radius:10px;color:#E2E8F0;font-size:13px;font-weight:600;cursor:pointer;">Close</button>
           </div>
         </div>

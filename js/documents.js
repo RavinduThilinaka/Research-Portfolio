@@ -1,17 +1,77 @@
 (function () {
   const DOCUMENTS = [
-    { icon: '📜', title: 'Project Charter', desc: 'Formal project charter authorising the PureTalk initiative — defining purpose, scope, stakeholders, deliverables, and success criteria.', type: 'Charter', version: 'v1.0', date: '2024', color: '#3B82F6',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop&q=80', available: false },
-    { icon: '📋', title: 'Proposal Document', desc: 'Detailed project proposal outlining research objectives, methodology, timelines, resource requirements, and expected outcomes of PureTalk.', type: 'Proposal', version: 'v1.0', date: '2024', color: '#22D3EE',
-      image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=500&fit=crop&q=80', available: false },
-    { icon: '✅', title: 'Check List Documents', desc: 'Structured checklists tracking project milestones, deliverable reviews, quality gates, and completion status across all phases.', type: 'Checklist', version: 'Collection', date: '2024', color: '#34D399',
-      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=500&fit=crop&q=80', available: false },
-    { icon: '🔬', title: 'Research Paper', desc: 'Peer-review ready research paper presenting the PureTalk approach, methodology, experiments, results, and comparison with existing systems.', type: 'Paper', version: 'Draft', date: '2024', color: '#FBBF24',
-      image: 'https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=800&h=500&fit=crop&q=80', available: false },
-    { icon: '📓', title: 'Log Books', desc: 'Chronological log books capturing weekly progress, meeting notes, decisions, and individual team member contributions throughout the project.', type: 'Logbook', version: 'Collection', date: '2024', color: '#A78BFA',
-      image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&h=500&fit=crop&q=80', available: false },
-    { icon: '📄', title: 'Draft Final Report', desc: 'Comprehensive draft final report summarising the PureTalk system, its components, implementation results, and recommendations for future work.', type: 'Report', version: 'Draft', date: '2024', color: '#F472B6',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop&q=80', available: false },
+    { 
+      icon: '📜', 
+      title: 'Project Charter', 
+      desc: 'Formal project charter authorising the PureTalk initiative — defining purpose, scope, stakeholders, deliverables, and success criteria.', 
+      type: 'Charter', 
+      version: 'v1.0', 
+      date: '2024', 
+      color: '#3B82F6',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop&q=80', 
+      available: false,
+      driveLink: '' // Add Project Charter Drive link here
+    },
+    { 
+      icon: '📋', 
+      title: 'Proposal Document', 
+      desc: 'Detailed project proposal outlining research objectives, methodology, timelines, resource requirements, and expected outcomes of PureTalk.', 
+      type: 'Proposal', 
+      version: 'v1.0', 
+      date: '2024', 
+      color: '#22D3EE',
+      image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=500&fit=crop&q=80', 
+      available: false,
+      driveLink: '' // Add Proposal Document Drive link here
+    },
+    { 
+      icon: '✅', 
+      title: 'Check List Documents', 
+      desc: 'Structured checklists tracking project milestones, deliverable reviews, quality gates, and completion status across all phases.', 
+      type: 'Checklist', 
+      version: 'Collection', 
+      date: '2024', 
+      color: '#34D399',
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=500&fit=crop&q=80', 
+      available: false,
+      driveLink: '' // Add Check List Drive link here
+    },
+    { 
+      icon: '🔬', 
+      title: 'Research Paper', 
+      desc: 'Peer-review ready research paper presenting the PureTalk approach, methodology, experiments, results, and comparison with existing systems.', 
+      type: 'Paper', 
+      version: 'Draft', 
+      date: '2024', 
+      color: '#FBBF24',
+      image: 'https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=800&h=500&fit=crop&q=80', 
+      available: false,
+      driveLink: '' // Add Research Paper Drive link here
+    },
+    { 
+      icon: '📓', 
+      title: 'Log Books', 
+      desc: 'Chronological log books capturing weekly progress, meeting notes, decisions, and individual team member contributions throughout the project.', 
+      type: 'Logbook', 
+      version: 'Collection', 
+      date: '2024', 
+      color: '#A78BFA',
+      image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&h=500&fit=crop&q=80', 
+      available: false,
+      driveLink: '' // Add Log Books Drive link here
+    },
+    { 
+      icon: '📄', 
+      title: 'Draft Final Report', 
+      desc: 'Comprehensive draft final report summarising the PureTalk system, its components, implementation results, and recommendations for future work.', 
+      type: 'Report', 
+      version: 'Draft', 
+      date: '2024', 
+      color: '#F472B6',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop&q=80', 
+      available: false,
+      driveLink: '' // Add Draft Final Report Drive link here
+    },
   ];
 
   const STATS = [
@@ -46,7 +106,7 @@
 
     grid.innerHTML = DOCUMENTS.map((doc, i) => `
       <div class="reveal" data-delay="${i * 80}">
-        <div class="doc-card" style="--doc-color:${doc.color};">
+        <div class="doc-card" style="--doc-color:${doc.color};" data-doc-index="${i}">
           <div style="position:relative;height:150px;overflow:hidden;">
             <img src="${doc.image}" alt="${doc.title}" loading="lazy" class="doc-card-image" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
             <div style="position:absolute;inset:0;background:linear-gradient(135deg, ${doc.color}80, ${doc.color}30 50%, transparent);mix-blend-mode:multiply;"></div>
@@ -66,8 +126,8 @@
               <span class="doc-meta-chip"><span style="opacity:0.6;margin-right:4px;">📅</span>${doc.date}</span>
             </div>
             <div style="display:flex;gap:8px;margin-top:16px;">
-              <button class="doc-btn doc-btn-view" style="--btn-color:${doc.color};">${EYE_SVG}View</button>
-              <button class="doc-btn doc-btn-download" style="--btn-color:${doc.color};" ${doc.available ? '' : 'disabled'}>${DL_SVG}Download</button>
+              <button class="doc-btn doc-btn-view" style="--btn-color:${doc.color};" data-view="${i}">${EYE_SVG}View</button>
+              <button class="doc-btn doc-btn-download" style="--btn-color:${doc.color};" data-download="${doc.driveLink || ''}" ${doc.driveLink ? '' : 'disabled'}>${DL_SVG}Download</button>
             </div>
             <div class="doc-info-notice" style="--doc-color:${doc.color};">
               ${INFO_SVG}
@@ -77,6 +137,30 @@
         </div>
       </div>
     `).join('');
+
+    // View button click handler
+    grid.querySelectorAll('[data-view]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const doc = DOCUMENTS[parseInt(btn.dataset.view)];
+        if (doc && doc.driveLink) {
+          window.open(doc.driveLink, '_blank', 'noopener,noreferrer');
+        } else {
+          alert('This document is not available yet. It will be available soon.');
+        }
+      });
+    });
+
+    // Download button click handler
+    grid.querySelectorAll('[data-download]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const link = btn.dataset.download;
+        if (link) {
+          window.open(link, '_blank', 'noopener,noreferrer');
+        }
+      });
+    });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
